@@ -1,0 +1,12 @@
+{
+    "company_id": "WIPRO",
+    "pros": [
+        "Company has a good return on equity (ROE) track record: 14.3%",
+        "Company's median sales growth is 13.17% over 3 years."
+    ],
+    "cons": [
+        "Company has delivered poor profit growth of 0.74% over 3 years.",
+        "Company has delivered poor profit growth of 4.26% over 5 years.",
+        "Company has delivered poor profit growth of 3.35% over 10 years."
+    ]
+}

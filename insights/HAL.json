@@ -1,0 +1,13 @@
+{
+    "company_id": "HAL",
+    "pros": [
+        "Company has a good return on equity (ROE) track record: 28.9%",
+        "Company has delivered good profit growth of 32.85% over 3 years.",
+        "Company has delivered good profit growth of 26.49% over 5 years."
+    ],
+    "cons": [
+        "Company has delivered poor sales growth of 9.91% over 3 years.",
+        "Company has delivered poor sales growth of 8.71% over 5 years.",
+        "Company has delivered poor sales growth of 7.22% over 10 years."
+    ]
+}

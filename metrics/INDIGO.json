@@ -1,0 +1,14 @@
+{
+    "company_id": "INDIGO",
+    "roe": {
+        "3Y": 0.0,
+        "5Y": 0.0,
+        "10Y": 0.0
+    },
+    "sales_3y": 67.58,
+    "sales_5y": 19.31,
+    "sales_10y": 20.01,
+    "profit_3y": 0.0,
+    "profit_5y": 120.69,
+    "profit_10y": 32.93
+}

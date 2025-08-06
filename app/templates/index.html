@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Analytics</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #fff; font-family: 'Segoe UI', sans-serif; }
+    .search-box { max-width: 500px; margin: auto; }
+    .tag-btn { margin: 5px; }
+
+    /* 🔮 Custom purple badge color */
+    .bg-purple {
+      background-color: #6f42c1;
+    }
+  </style>
+</head>
+<body class="text-center p-5">
+
+  <!-- Image -->
+  <img src="{{ url_for('static', filename='Stock_illustration.png') }}" alt="Analytics" style="max-width: 300px;">
+
+  <!-- Title with colored badge -->
+  <h2 class="mt-4">
+    Find the best with <br>
+    <span class="badge bg-purple text-white">Stock Analytics</span>
+  </h2>
+
+  <!-- Search Bar -->
+  <form class="search-box mt-4" action="/company" method="get">
+    <div class="input-group shadow">
+      <span class="input-group-text">🔍</span>
+      <input type="text" class="form-control" name="id" placeholder="Search for a company" required>
+    </div>
+  </form>
+
+  <!-- Examples -->
+  <p class="mt-4 text-muted">For Example :</p>
+  <div>
+    {% for example in ['HDFCBANK', 'TCS', 'INFY', 'WIPRO', 'SBILIFE'] %}
+      <a href="/company?id={{ example }}" class="btn btn-light shadow tag-btn">{{ example }}</a>
+    {% endfor %}
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "company_id": "BAJAJ-AUTO",
+    "pros": [
+        "Company has a good return on equity (ROE) track record: 26.5%",
+        "Company has delivered good profit growth of 16.64% over 3 years.",
+        "Company's median sales growth is 17.38% over 3 years."
+    ],
+    "cons": [
+        "Company has delivered poor profit growth of 9.36% over 5 years.",
+        "Company has delivered poor profit growth of 8.59% over 10 years.",
+        "Company has delivered poor sales growth of 8.13% over 5 years."
+    ]
+}

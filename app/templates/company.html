@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ company_id }} - Financial Insights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      color: #007bff;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    .sub-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+    }
+
+    .analysis-card {
+      border: 1px solid #dee2e6;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      min-height: 130px;
+    }
+
+    .analysis-card h6 {
+      color: #0048b0;
+      font-weight: 600;
+    }
+
+    .insight-box {
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      min-height: 100%;
+    }
+
+    .pros-box {
+      background-color: #20c997;
+    }
+
+    .cons-box {
+      background-color: #f44272;
+    }
+
+    .insight-box ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .row > div {
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body class="container py-4">
+
+  <h3 class="mb-4">Insights for <strong>{{ company_id }}</strong></h3>
+
+  {% if not pros and not cons %}
+    <div class="alert alert-warning">⚠️ No data found for <strong>{{ company_id }}</strong>.</div>
+  {% else %}
+    
+    <!-- Analysis Section -->
+    <div class="section">
+      <div class="section-title mb-2">Analysis</div>
+      <p class="sub-label"># Analysis Generated Using ML</p>
+      <div class="row text-center mt-3">
+        <div class="col-md-4 mb-3">
+          <div class="analysis-card">
+            <h6>Compounded Sales Growth</h6>
+            <p>3 Years: {{ metrics.sales_3y }}%</p>
+            <p>5 Years: {{ metrics.sales_5y }}%</p>
+            <p>10 Years: {{ metrics.sales_10y }}%</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="analysis-card">
+            <h6>Compounded Profit Growth</h6>
+            <p>3 Years: {{ metrics.profit_3y }}%</p>
+            <p>5 Years: {{ metrics.profit_5y }}%</p>
+            <p>10 Years: {{ metrics.profit_10y }}%</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="analysis-card">
+            <h6>Return on Equity</h6>
+            <p>{{ metrics.roe }}%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pros and Cons Section -->
+    <div class="section">
+      <div class="section-title mb-2">Pros and Cons</div>
+      <p class="sub-label">● Generated Using Machine Learning</p>
+
+      <div class="row g-4 mt-2">
+        <div class="col-md-6">
+          <div class="insight-box pros-box">
+            <h5>✔ Pros</h5>
+            {% if pros %}
+              <ul>
+                {% for p in pros %}
+                  <li>{{ p }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>No pros available.</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="insight-box cons-box">
+            <h5>✘ Cons</h5>
+            {% if cons %}
+              <ul>
+                {% for c in cons %}
+                  <li>{{ c }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>No cons available.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endif %}
+
+  <a href="/" class="btn btn-outline-primary mt-3">← Back to Search</a>
+
+</body>
+</html>
